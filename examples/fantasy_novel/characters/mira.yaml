@@ -1,0 +1,102 @@
+# Character Sheet — Mira (Enhanced Format)
+name: "Mira"
+age: 45
+character_type: "mentor"
+
+appearance: "Tall and weathered, with silver-streaked dark hair worn long. Deep brown eyes with crow's feet. Wears the green robes of the Verdant Order, adorned with living vines. Moves with deliberate grace."
+
+personality_traits:
+  - "Patient and measured — thinks in decades, not days"
+  - "Quietly fierce — her calmness hides iron will"
+  - "Carries guilt about the Order's inaction"
+  - "Dry sense of humor that catches people off guard"
+
+backstory: >
+  A senior member of the Verdant Order who has grown disillusioned with their
+  policy of non-intervention. She witnessed the Veil weaken at the Heartroot
+  and realized the Order's passive approach will lead to catastrophe. Left the
+  Thornwood against the Elder's wishes to find the shard-bearer.
+
+motivations:
+  - "Prevent the Veil from collapsing"
+  - "Guide the shard-bearer without controlling them"
+  - "Atone for the Order's centuries of inaction"
+
+speech_patterns: >
+  Speaks with the cadence of someone who chooses every word carefully. Uses
+  nature metaphors naturally. Asks probing questions instead of giving direct
+  answers. When angry, becomes very still and very quiet. Occasionally
+  speaks in Old Aetherian proverbs.
+
+# Enhanced skills format
+skills:
+  - name: "Advanced Aethercraft"
+    description: "Master of Warding and natural Shaping. Can sense aether flows and disturbances in the Veil."
+    proficiency_level: 9
+    scene_triggers: ["magic", "combat", "investigation"]
+
+  - name: "Herbalism and Healing"
+    description: "Expert knowledge of medicinal plants and natural remedies. Can heal wounds and cure poisons."
+    proficiency_level: 8
+    scene_triggers: ["survival", "social", "exploration"]
+
+  - name: "Ancient Lore"
+    description: "Deep knowledge of history, the Sundering, and the old magics. Speaks Old Aetherian."
+    proficiency_level: 9
+    scene_triggers: ["investigation", "social", "magic"]
+
+  - name: "Political Navigation"
+    description: "Decades of experience navigating faction politics and reading hidden motives."
+    proficiency_level: 7
+    scene_triggers: ["negotiation", "social"]
+
+# Enhanced relationships format
+relationships:
+  - target_character: "Kael"
+    relationship_type: "mentor-student"
+    trust_level: 6
+    history:
+      - "Sensed his awakening through the Veil"
+      - "Found him after the village attack"
+      - "Teaching him to control his shard connection"
+    current_tension: "Fears placing too heavy a burden on young shoulders"
+
+  - target_character: "Sera"
+    relationship_type: "ally"
+    trust_level: 5
+    history:
+      - "Appreciates her protective instincts toward Kael"
+      - "Sees her younger self in Sera's fire"
+    current_tension: "Worries Sera's impulsiveness could endanger the group"
+
+  - target_character: "Theron"
+    relationship_type: "wary"
+    trust_level: 1
+    history:
+      - "Senses his divided loyalties"
+      - "Has seen his type before — charming but unreliable"
+    current_tension: "Watching carefully, believes in second chances but stays alert"
+
+  - target_character: "Voss"
+    relationship_type: "complex"
+    trust_level: 2
+    history:
+      - "Understands aether corruption from personal experience"
+      - "Knows the cost of overreaching with magic"
+    current_tension: "Sees both his potential for redemption and danger"
+
+# Enhanced emotional state
+emotional_state:
+  current_state: "determined"
+  intensity: 5
+  trigger_event: "Leaving the Order to find the shard-bearer"
+  previous_states:
+    - "grieving"
+    - "conflicted"
+    - "resolved"
+
+arc_summary: >
+  Mira begins as a guide and mentor figure. Her arc is about confronting
+  the consequences of inaction and learning that protecting people sometimes
+  means letting them face danger. She must also reckon with her own use of
+  aether and its toll on the Veil.

@@ -1,0 +1,46 @@
+# Character Sheet — Theron
+name: "Theron"
+age: 27
+appearance: "Handsome in a disheveled way. Dark skin, close-cropped hair, an easy smile that doesn't quite reach his eyes. A thin scar along his jawline. Dresses well despite being perpetually short on coin."
+
+personality_traits:
+  - "Charismatic and smooth-talking"
+  - "Morally flexible — does what's necessary"
+  - "Hides vulnerability behind humor"
+  - "Secretly craves belonging"
+
+backstory: >
+  A former spy for the Free Ports Alliance who was burned by his handlers.
+  Survived on the streets of Port Vellen through cons and information trading.
+  Knows the underworld networks of every major city. Has a debt to the
+  Shardseeker Cult that he's desperate to escape.
+
+motivations:
+  - "Pay off his debt to the Cult and be free"
+  - "Find people worth being loyal to"
+  - "Survive — always survive"
+
+speech_patterns: >
+  Eloquent and theatrical. Uses misdirection in conversation — answers
+  questions with questions. Drops into street slang when caught off guard.
+  Makes pop-culture-style quips. When genuinely honest, his voice goes quiet.
+
+relationships:
+  Kael: "Sees him as naive but admires his sincerity. Feels guilty about his secret mission for the Cult."
+  Sera: "Genuinely drawn to her. Their verbal sparring is his favorite thing. Afraid she'll hate him when the truth comes out."
+  Mira: "Respects her but finds druids unsettling. She seems to see through his masks."
+  Voss: "A mirror he doesn't want to look into. They understand each other too well."
+
+emotional_state: "Conflicted and performing"
+
+arc_summary: >
+  Theron begins as a reluctant double agent, working for the Cult to pay his
+  debt while traveling with Kael's group. His betrayal and subsequent
+  redemption form the emotional core of Act II. He learns that loyalty
+  freely given is worth more than any debt.
+
+skills:
+  - "Espionage and information gathering"
+  - "Lock-picking and stealth"
+  - "Social engineering and disguise"
+  - "Knife fighting"

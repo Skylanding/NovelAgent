@@ -1,0 +1,89 @@
+# Character Sheet — 药尘 (Yao Chen) — Enhanced Format
+name: "药尘"
+age: 0
+character_type: "mentor"
+
+appearance: >
+  Manifests as a translucent, elderly figure with a long white beard, kind but
+  sharp eyes, and scholarly robes from an ancient era. His form flickers and fades
+  depending on his remaining soul energy. When he concentrates, golden pill patterns
+  shimmer across his ghostly hands.
+
+personality_traits:
+  - "博学幽默 — Vast knowledge delivered with dry wit and terrible puns"
+  - "严师慈父 — Strict teacher but deeply caring, a father figure"
+  - "深谋远虑 — Plans many moves ahead, keeps secrets for the right moment"
+  - "不甘 — Unresolved bitterness about his betrayal, but channels it into teaching"
+
+backstory: >
+  Once the continent's greatest alchemist — a Tier 6 master and 斗尊 (Dou Zun)
+  level cultivator. Three hundred years ago, his most trusted disciple betrayed
+  him to the Soul Hall, which coveted his Heavenly Flame and pill recipes. They
+  destroyed his body and tried to capture his soul. He fragmented his spirit into
+  the jade ring, entering dormancy. Now he exists as a fading spirit with vast
+  knowledge but no physical power, bound to teach one final student.
+
+motivations:
+  - "传承 — Pass on his knowledge before his soul dissipates completely"
+  - "复仇 — See the Soul Hall brought low for their crimes"
+  - "赎罪 — Atone for failing to see his disciple's betrayal"
+  - "守护 — Protect Lin Yan from repeating his mistakes"
+
+speech_patterns: >
+  Speaks like an ancient scholar — elaborate, precise, and peppered with archaic
+  idioms. Makes terrible jokes about being dead ("当了三百年的戒指可不容易" —
+  Being a ring for 300 years isn't easy). When teaching, becomes intensely focused
+  and demanding. When moved, drops the humor entirely, speaking with raw emotion
+  about legacy and regret. Calls Lin Yan "小子" (brat) affectionately.
+
+skills:
+  - name: "炼药宗师 (Alchemy Grandmaster)"
+    description: "Tier 6 alchemist knowledge. Can guide pill refinement with perfect precision, though he can no longer perform it himself."
+    proficiency_level: 10
+    scene_triggers: ["magic", "investigation", "social"]
+
+  - name: "灵魂之眼 (Soul Eye)"
+    description: "Can perceive cultivation levels, hidden formations, and spiritual anomalies even as a spirit."
+    proficiency_level: 8
+    scene_triggers: ["investigation", "exploration", "combat"]
+
+  - name: "古代知识 (Ancient Knowledge)"
+    description: "Three hundred years of accumulated wisdom about the continent's secrets, factions, and lost techniques."
+    proficiency_level: 9
+    scene_triggers: ["investigation", "social", "exploration"]
+
+relationships:
+  - target_character: "林焱"
+    relationship_type: "master-disciple"
+    trust_level: 8
+    history:
+      - "Chose Lin Yan because of the Heavenly Flame in his dantian"
+      - "Grew to genuinely care for the boy's character, not just his potential"
+      - "Sees in Lin Yan the disciple he always deserved"
+    current_tension: "Knows his soul is fading faster than he admits, must teach everything in time"
+
+  - target_character: "韩枫"
+    relationship_type: "enemy"
+    trust_level: -10
+    history:
+      - "Recognizes Soul Hall techniques in Han Feng's style"
+      - "Suspects Han Feng is connected to the one who betrayed him"
+    current_tension: "Rage barely contained — wants justice but fears clouding Lin Yan's judgment"
+
+emotional_state:
+  current_state: "bittersweet"
+  intensity: 7
+  trigger_event: "Watching Lin Yan succeed at alchemy for the first time"
+  previous_states:
+    - "dormant"
+    - "surprised"
+    - "hopeful"
+    - "proud"
+
+arc_summary: >
+  Yao Chen is the heart of the story's emotional core. His arc is about the
+  meaning of legacy — not the techniques you pass down, but the values. He must
+  confront whether his desire for revenge against the Soul Hall endangers his
+  student. His ultimate sacrifice — burning the last of his soul to save Lin Yan —
+  is the story's most devastating moment, proving that a teacher's greatest
+  achievement is a student who surpasses them.

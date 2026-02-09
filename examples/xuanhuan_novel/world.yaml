@@ -1,0 +1,152 @@
+# World Bible — 逆天炼魂 (Against Heaven: Soul Refining)
+
+setting:
+  name: "天玄大陆 (Tianxuan Continent)"
+  description: >
+    A vast continent where martial cultivation determines one's destiny. The strong
+    rule and the weak submit. Cultivation sects dot the landscape like stars,
+    competing for resources, territory, and heavenly treasures. The continent is
+    suffused with 灵气 (Spiritual Energy) that practitioners absorb to advance
+    their cultivation. Ancient ruins of a fallen celestial civilization hold
+    secrets that could shake the heavens.
+
+geography:
+  regions:
+    - name: "岚风帝国 (Lanfeng Empire)"
+      description: >
+        A vast empire spanning the central plains, ruled by the imperial Xiao clan.
+        Home to dozens of cultivation sects and the most prosperous cities. The
+        empire's power rests on controlling three great spiritual veins.
+      climate: "Temperate with spiritual energy causing unusual weather patterns"
+      notable_locations:
+        - "岚风城 — Imperial capital, built atop the largest spiritual vein"
+        - "天炎学院 — The continent's most prestigious cultivation academy"
+        - "万药谷 — Valley of Ten Thousand Herbs, sacred to alchemists"
+        - "试炼山脉 — Trial Mountains where students test their strength"
+
+    - name: "蛮荒域 (Desolate Wilderness)"
+      description: >
+        Untamed lands to the north filled with magical beasts of terrifying power.
+        Rich in spiritual herbs and rare minerals but extremely dangerous. Only the
+        strong dare venture deep.
+      climate: "Harsh, unpredictable, saturated with wild spiritual energy"
+      notable_locations:
+        - "万兽山 — Mountain of Ten Thousand Beasts, home to beast kings"
+        - "远古战场 — Ancient Battlefield, ruins of a war between gods"
+        - "天魂池 — Heavenly Soul Pool, legendary cultivation treasure"
+
+    - name: "幽冥深渊 (Nether Abyss)"
+      description: >
+        A massive chasm splitting the continent's south, filled with darkness and
+        death energy. Sealed by ancient cultivators millennia ago. The seal is
+        weakening.
+      climate: "Perpetual darkness, corrosive death energy"
+      notable_locations:
+        - "深渊入口 — Guarded entrance, sealed with ancient formations"
+        - "幽冥殿 — Palace of the Nether Lord, sealed deep within"
+
+    - name: "苍穹海 (Azure Sky Sea)"
+      description: >
+        Endless sea to the east with mysterious islands. Home to sea-dwelling
+        cultivators and ancient maritime sects. The Heavenly Flame Island lies
+        somewhere in its depths.
+      climate: "Maritime, typhoons carrying spiritual energy"
+      notable_locations:
+        - "天焰岛 — Heavenly Flame Island, containing an eternal flame"
+        - "海龙宫 — Sea Dragon Palace, underwater cultivation sect"
+
+cultivation_system:
+  name: "天玄修炼体系 (Tianxuan Cultivation System)"
+  description: >
+    Practitioners absorb 灵气 (Spiritual Energy) from heaven and earth, refining
+    it within their 丹田 (Dantian — energy center). Advancement requires breaking
+    through bottlenecks, which becomes exponentially harder at higher realms. The
+    path of cultivation has two pillars: 武修 (Martial Cultivation) for combat
+    power, and 炼药 (Alchemy) for creating pills, poisons, and medicines.
+  realms:
+    - "斗者 (Dou Zhe / Fighter) — Initial awakening of spiritual energy"
+    - "斗师 (Dou Shi / Master) — Can project energy externally"
+    - "大斗师 (Da Dou Shi / Grand Master) — Energy takes solid form"
+    - "斗灵 (Dou Ling / Spirit) — Spiritual awareness, can fly short distances"
+    - "斗王 (Dou Wang / King) — Domain manifestation, true flight"
+    - "斗皇 (Dou Huang / Emperor) — Space manipulation, devastating power"
+    - "斗宗 (Dou Zong / Ancestor) — Can create pocket dimensions"
+    - "斗尊 (Dou Zun / Venerable) — Approach the laws of heaven"
+    - "斗圣 (Dou Sheng / Saint) — Transcend mortal limits"
+    - "斗帝 (Dou Di / Emperor of Fighting) — Legendary, none in ten thousand years"
+  rules:
+    - "Cultivation requires 灵气 absorption and internal refinement"
+    - "Higher realms exponentially harder — each breakthrough risks qi deviation"
+    - "Rare treasures (天材地宝) can aid breakthroughs but attract deadly competition"
+    - "Alchemy requires soul power — stronger soul = higher tier pills"
+    - "天火 (Heavenly Flames) are ranked 1-23, each with unique properties"
+    - "Blood contracts with magical beasts grant their power but bind fates"
+    - "The 魂殿 (Soul Hall) controls soul cultivation secrets, demands tribute"
+
+alchemy_system:
+  name: "炼药术 (Art of Alchemy)"
+  description: >
+    Alchemists refine spiritual herbs into pills using cauldrons and soul fire.
+    Pill tiers match cultivation realms. A skilled alchemist commands immense
+    respect — even emperors seek their favor.
+  tiers:
+    - "一品 (Tier 1) — Basic healing and cultivation pills"
+    - "二品 (Tier 2) — Advanced pills, require rare herbs"
+    - "三品 (Tier 3) — Soul-strengthening pills, extremely valuable"
+    - "四品 (Tier 4) — Can alter bloodlines and mend broken meridians"
+    - "五品 (Tier 5) — Heaven-defying pills, each recipe a national treasure"
+    - "六品+ (Tier 6+) — Legendary, pill tribulation from heaven"
+  rules:
+    - "Alchemy requires soul power to control flame precisely"
+    - "Heavenly Flames are the best fuel — dramatically increase success rate"
+    - "Failed pills can explode violently — alchemy is always dangerous"
+    - "Pill patterns (丹纹) on the surface indicate quality — more patterns = better"
+
+history:
+  the_ancient_war: >
+    Ten thousand years ago, the last 斗帝 (Dou Di) fought against the Nether Lord
+    who tried to merge the mortal realm with the death realm. The Dou Di sacrificed
+    himself to seal the Nether Abyss, but the seal was never meant to last forever.
+    His inheritance — including a Heavenly Flame and cultivation manual — was
+    scattered across the continent.
+  the_soul_hall_rise: >
+    Three hundred years ago, the 魂殿 (Soul Hall) emerged from the shadows,
+    demanding all alchemists pay tribute or face destruction. They control the
+    secrets of soul cultivation and use puppet corpses as weapons. Their true
+    goal is unknown, but they seek the ancient Dou Di's inheritance.
+  current_era: >
+    The great sects maintain an uneasy balance. The Soul Hall grows bolder.
+    The seal on the Nether Abyss shows cracks. Young geniuses compete fiercely
+    in the cultivation academies, unaware that a storm approaches.
+
+factions:
+  - name: "天炎学院 (Heavenly Flame Academy)"
+    description: >
+      The continent's most prestigious cultivation academy. Accepts talented
+      youths regardless of background. Protects a fragment of the Dou Di's manual.
+    leader: "院长 苏千秋 (Dean Su Qianqiu) — 斗宗 peak"
+
+  - name: "云岚宗 (Misty Cloud Sect)"
+    description: >
+      Powerful mountain sect known for wind-element techniques. Arrogant and
+      politically ambitious. Controls trade routes through the mountains.
+    leader: "宗主 云韵 (Sect Master Yun Yun) — 斗皇 mid"
+
+  - name: "魂殿 (Soul Hall)"
+    description: >
+      Shadowy organization of soul cultivators. Uses corpse puppets and soul
+      enslavement. Seeks to collect all Heavenly Flames and the Dou Di inheritance.
+      Their elders are terrifyingly powerful.
+    leader: "殿主 (Hall Master) — identity unknown, rumored 斗圣"
+
+  - name: "丹塔 (Pill Tower)"
+    description: >
+      Alliance of the continent's greatest alchemists. Neutral in politics but
+      immensely influential. Opposes the Soul Hall's attempts to control alchemy.
+    leader: "塔主 (Tower Master) — 斗宗, Tier 5 alchemist"
+
+  - name: "萧家 (Xiao Clan)"
+    description: >
+      Ancient noble clan of the Lanfeng Empire. Once produced a Dou Di candidate.
+      Now in decline but still commands respect. The female lead's family.
+    leader: "族长 萧战 (Patriarch Xiao Zhan) — 斗灵 peak"

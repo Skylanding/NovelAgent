@@ -1,0 +1,47 @@
+# Character Sheet — Voss
+name: "Voss"
+age: 33
+appearance: "Gaunt and pale, with dark circles under grey eyes. Black hair streaked with premature white. Void-corruption marks crawl up his left arm like dark veins. Wears a long coat to hide them."
+
+personality_traits:
+  - "Blunt to the point of cruelty — honesty is all he has left"
+  - "Self-loathing — believes he's beyond redemption"
+  - "Surprisingly gentle with those weaker than him"
+  - "Darkly humorous about his own condition"
+
+backstory: >
+  A former Shardseeker Cult enforcer who wielded a Crown shard for the Faceless.
+  The shard's corruption nearly killed him and left him marked by the Void.
+  He turned against the Cult after being ordered to destroy a village and
+  has been hunted ever since. Knows more about the shards than anyone alive.
+
+motivations:
+  - "Destroy the Cult from the inside"
+  - "Find a way to reverse his Void corruption before it kills him"
+  - "Protect others from the same mistakes he made"
+
+speech_patterns: >
+  Clipped and blunt. Doesn't waste words. Uses dark humor as a defense.
+  When talking about the Cult or shards, becomes precise and clinical.
+  Rarely raises his voice — when he does, it means something has gone
+  terribly wrong. Occasionally slips into Cult terminology.
+
+relationships:
+  Kael: "Sees his younger self in Kael. Terrified the shard will corrupt him the same way."
+  Sera: "Respects her directness. She's one of the few who doesn't flinch at his appearance."
+  Theron: "Recognizes a fellow liar. Doesn't trust him but understands the position he's in."
+  Mira: "Grateful for her attempts to treat his corruption. She's the closest thing he has to hope."
+
+emotional_state: "Resigned, with flickers of desperate hope"
+
+arc_summary: >
+  Voss begins as a dark mirror of what Kael could become. His journey is about
+  learning that damage doesn't define destiny. His knowledge of the Cult
+  becomes crucial, and his sacrifice at the climax demonstrates that
+  redemption is a choice, not a gift.
+
+skills:
+  - "Combat — brutal and efficient, trained by the Cult"
+  - "Void knowledge — understands corruption, Void creatures, and shard mechanics"
+  - "Intimidation"
+  - "Survival in hostile environments"

@@ -1,0 +1,100 @@
+# Character Sheet — 韩枫 (Han Feng) — Enhanced Format
+name: "韩枫"
+age: 22
+character_type: "antagonist"
+
+appearance: >
+  Tall and handsome with a cultivated elegance — sharp features, dark hair swept
+  back, always immaculately dressed in the academy's finest robes. A condescending
+  smile that never fully leaves his face. His eyes hold a cold calculating light.
+  Wears a jade pendant that subtly pulses with dark energy — a Soul Hall artifact.
+
+personality_traits:
+  - "野心勃勃 — Endlessly ambitious, considers himself destined for greatness"
+  - "伪善 — Wears a mask of charm, genuinely cruel underneath"
+  - "嫉妒 — Cannot tolerate anyone who might outshine him"
+  - "精明 — Genuinely intelligent, which makes him dangerous"
+
+backstory: >
+  A prodigy from a minor noble family who rose through the Heavenly Flame Academy
+  on talent and ruthlessness. Secretly recruited by the Soul Hall at age 16 after
+  they identified his potential. They granted him a stolen Heavenly Flame (ranked
+  19th) and secret techniques. In exchange, he serves as their agent within the
+  academy — stealing research, eliminating threats, and seeking the Dou Di's manual
+  fragment. He was involved in the operation to destroy Lin Yan's dantian three
+  years ago.
+
+motivations:
+  - "权力 — Achieve power by any means, become the continent's strongest"
+  - "控制 — Control the academy from within for the Soul Hall"
+  - "消灭威胁 — Eliminate Lin Yan before he becomes a threat"
+  - "获取传承 — Steal the Dou Di's manual fragment"
+
+speech_patterns: >
+  Polished and eloquent in public — the model academy senior. Uses praise as a
+  weapon, complimenting people just before undermining them. In private or when
+  cornered, drops the mask — voice becomes cold and contemptuous. Refers to weaker
+  cultivators as "蝼蚁" (ants). When talking to Soul Hall superiors, becomes
+  subservient, revealing his true cowardice before greater power.
+
+skills:
+  - name: "海心焰 (Sea Heart Flame)"
+    description: "Stolen Heavenly Flame (ranked 19th). Blue-green fire with corrosive properties. Powerful but imperfectly controlled."
+    proficiency_level: 6
+    scene_triggers: ["combat", "magic"]
+
+  - name: "炼药术 (Alchemy)"
+    description: "Talented Tier 3 alchemist boosted by stolen techniques. Good but relies on shortcuts."
+    proficiency_level: 6
+    scene_triggers: ["social", "magic"]
+
+  - name: "魂术 (Soul Arts)"
+    description: "Secret Soul Hall techniques. Can attack minds, plant suggestions, and create weak puppet thralls."
+    proficiency_level: 5
+    scene_triggers: ["combat", "social", "investigation"]
+
+  - name: "阴谋诡计 (Scheming)"
+    description: "Master manipulator. Plans within plans, uses pawns, never gets his own hands dirty until forced."
+    proficiency_level: 8
+    scene_triggers: ["negotiation", "social"]
+
+relationships:
+  - target_character: "林焱"
+    relationship_type: "enemy"
+    trust_level: -9
+    history:
+      - "Participated in the operation that destroyed Lin Yan's dantian"
+      - "Initially dismissed him as finished, now alarmed by his resurgence"
+    current_tension: "Escalating from contempt to fear as Lin Yan grows stronger"
+
+  - target_character: "萧冰凝"
+    relationship_type: "strategic"
+    trust_level: -1
+    history:
+      - "Courted the Xiao clan's favor as a political tool"
+      - "Sees Bingning as a prize to be won, not a person"
+    current_tension: "Frustrated that she sees through his charm"
+
+  - target_character: "药尘"
+    relationship_type: "unknown-enemy"
+    trust_level: 0
+    history:
+      - "Doesn't know Yao Chen exists as a spirit"
+      - "Uses techniques descended from those who betrayed Yao Chen"
+    current_tension: "None yet — the revelation will be devastating"
+
+emotional_state:
+  current_state: "confident"
+  intensity: 7
+  trigger_event: "Recent success in reporting to the Soul Hall"
+  previous_states:
+    - "calculating"
+    - "ambitious"
+    - "satisfied"
+
+arc_summary: >
+  Han Feng represents the dark path — what happens when talent serves only
+  ambition. His escalation from school bully to genuine threat mirrors Lin Yan's
+  rise. His downfall comes from the same flaw that doomed Yao Chen's original
+  betrayer: he underestimates the power of bonds, seeing loyalty as weakness.
+  In the final battle, he wields stolen power against earned power, and loses.

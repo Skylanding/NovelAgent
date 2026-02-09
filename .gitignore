@@ -1,0 +1,41 @@
+# Environment and secrets
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Output artifacts
+**/output/chapters/
+**/output/intermediates/
+**/output/versions/
+**/output/exports/
+
+# ChromaDB / memory persistence
+**/chroma_data/
+**/data/memories/
+
+# Claude Code local settings
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,103 @@
+# Character Sheet — 云岚 (Yun Lan) — Enhanced Format
+name: "云岚"
+age: 18
+character_type: "sidekick"
+
+appearance: >
+  Slender and agile with lively features — warm brown skin, windswept dark hair
+  cut short for practicality, and bright amber eyes full of curiosity. Has a
+  small wind-element tattoo on her wrist — the mark of the Misty Cloud Sect.
+  Dresses in practical training robes rather than the elaborate outfits other
+  sect disciples prefer.
+
+personality_traits:
+  - "活泼好奇 — Energetic and endlessly curious about everything"
+  - "正义感强 — Strong sense of justice, hates bullying"
+  - "粗心大意 — Careless about details and social propriety"
+  - "忠诚 — Once she chooses a friend, she's loyal to the bone"
+
+backstory: >
+  A junior disciple of the Misty Cloud Sect sent to the Heavenly Flame Academy
+  as a representative. Unlike her sect's arrogant reputation, Yun Lan is
+  refreshingly straightforward. Her father was a commoner who married into the
+  sect, giving her a different perspective than most cultivators. She's talented
+  in wind techniques but struggles with the rigid hierarchy of cultivation society.
+  She befriends Lin Yan not despite his reputation, but because she admires people
+  who keep fighting.
+
+motivations:
+  - "变强 — Become strong enough to change the cultivation world's brutal hierarchy"
+  - "友情 — Build genuine friendships beyond sect and clan politics"
+  - "探索 — Explore the continent's mysteries and ancient ruins"
+  - "家族荣誉 — Prove her commoner-blooded father deserves respect"
+
+speech_patterns: >
+  Speaks quickly and energetically, often interrupting herself. Uses colloquial
+  language that shocks noble cultivators. Laughs easily and loudly. When angry,
+  becomes bluntly confrontational — "你以为你很了不起？" (You think you're so great?).
+  Calls Lin Yan "小焱" (Little Yan) despite his protests. Occasionally slips into
+  her father's rustic proverbs.
+
+skills:
+  - name: "云岚风术 (Misty Cloud Wind Arts)"
+    description: "Sect wind techniques. Excellent at speed and evasion. Can create cutting wind blades and conceal movements in mist."
+    proficiency_level: 6
+    scene_triggers: ["combat", "exploration", "survival"]
+
+  - name: "轻功 (Lightfoot Movement)"
+    description: "Exceptional agility and speed, even among wind cultivators. Nearly impossible to catch."
+    proficiency_level: 7
+    scene_triggers: ["combat", "exploration"]
+
+  - name: "阵法基础 (Formation Basics)"
+    description: "Studied ancient formations at her father's insistence. Can identify and partially disarm traps."
+    proficiency_level: 4
+    scene_triggers: ["exploration", "investigation"]
+
+  - name: "人际交往 (Social Connection)"
+    description: "Natural ability to connect with people across social boundaries. Gathers information effortlessly through friendliness."
+    proficiency_level: 7
+    scene_triggers: ["social", "negotiation"]
+
+relationships:
+  - target_character: "林焱"
+    relationship_type: "close-friend"
+    trust_level: 7
+    history:
+      - "Helped him during entrance trials when no one else would"
+      - "Impressed by his refusal to give up despite everything"
+      - "Training partners and mutual support"
+    current_tension: "Notices Xiao Bingning's growing interest in Lin Yan — mixed feelings she doesn't fully understand"
+
+  - target_character: "萧冰凝"
+    relationship_type: "rival-respect"
+    trust_level: 2
+    history:
+      - "Competitive with the 'ice princess' reputation"
+      - "Secretly admires Bingning's strength"
+    current_tension: "Jealousy about Bingning's history with Lin Yan, masked as disapproval"
+
+  - target_character: "韩枫"
+    relationship_type: "distrust"
+    trust_level: -4
+    history:
+      - "Han Feng tried to recruit her sect's support"
+      - "Something feels wrong about him — too perfect"
+    current_tension: "Gathering evidence but nobody believes the popular senior could be a traitor"
+
+emotional_state:
+  current_state: "excited"
+  intensity: 7
+  trigger_event: "Arrival at the Heavenly Flame Academy"
+  previous_states:
+    - "determined"
+    - "curious"
+    - "hopeful"
+
+arc_summary: >
+  Yun Lan represents the heart of the group — the one who believes in friendship
+  and justice in a world that rewards only power. Her arc is about discovering that
+  idealism isn't naivety — it's a choice, and a powerful one. She provides crucial
+  support through her wind abilities and social connections, and her loyalty becomes
+  the glue that holds the alliance together in the final battle. She also learns
+  to accept that caring for someone doesn't mean owning them.

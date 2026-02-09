@@ -1,0 +1,57 @@
+# Plot Outline — The Shattered Crown
+
+premise: >
+  When a young blacksmith discovers one of the five Crown shards hidden in his
+  village's forge, he is thrust into a continent-spanning quest to find the
+  remaining shards before the Shardseeker Cult can reassemble the Crown and
+  tear open the Veil between worlds.
+
+themes:
+  - "Power corrupts — the shards tempt every wielder"
+  - "Unity in diversity — the fractured world must come together"
+  - "The cost of magic — every use of aether has a price"
+  - "Legacy and choice — you are not defined by your bloodline"
+
+target_chapter_count: 24
+
+acts:
+  - name: "Act I — The Forge and the Flame"
+    chapters: [1, 2, 3, 4, 5, 6]
+    arc_goal: >
+      Kael discovers the first shard, learns of his connection to King Aethel,
+      and is forced to flee his village when the Cult attacks. He meets Sera
+      and they journey to Port Vellen seeking answers.
+    key_events:
+      - "Kael finds the shard in the forge during a Void-touched attack"
+      - "Village elder reveals Kael's bloodline before dying"
+      - "Kael and Sera flee through the Thornwood, encounter Mira"
+      - "Arrival at Port Vellen, meeting Theron"
+      - "First confrontation with Cult agents"
+
+  - name: "Act II — Shards and Shadows"
+    chapters: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    arc_goal: >
+      The group seeks the remaining shards while the Cult closes in. Alliances
+      are tested. Kael struggles with the shard's corruption. The true identity
+      of the Faceless is hinted at.
+    key_events:
+      - "Second shard found in the Drowned Spire"
+      - "Theron's betrayal and redemption"
+      - "Mira reveals the Verdant Order's secret about the Veil"
+      - "Third shard recovered from the Crystalline Caves"
+      - "Voss joins the group as unlikely ally"
+      - "Kael begins losing memories to shard corruption"
+
+  - name: "Act III — The Crown Reforged"
+    chapters: [17, 18, 19, 20, 21, 22, 23, 24]
+    arc_goal: >
+      Final race against the Cult. The Faceless is revealed. Kael must choose
+      between reforging the Crown (risking another Sundering) or destroying the
+      shards (losing magic forever). The answer lies in a third path.
+    key_events:
+      - "Fourth shard found — but the Cult has the fifth"
+      - "The Faceless revealed as a descendant of King Aethel"
+      - "Battle at the Ashfield"
+      - "Kael discovers the third path: mending the Veil without the Crown"
+      - "Final confrontation and sacrifice"
+      - "Epilogue: the world begins to heal"

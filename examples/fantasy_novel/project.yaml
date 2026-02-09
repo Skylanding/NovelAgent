@@ -1,0 +1,100 @@
+# StoryForge Project Configuration
+project:
+  name: "The Shattered Crown"
+  author: "StoryForge"
+  genre: "Epic Fantasy"
+  target_word_count: 5000
+  target_chapters: 3
+
+# LLM Backend Definitions
+llm_backends:
+  openai_cheap:
+    provider: "openai"
+    model: "gpt-4o-mini"
+    tier: "small"
+    api_key_env: "OPENAI_API_KEY"
+    max_tokens: 4096
+    context_window: 128000
+    requests_per_minute: 500
+    default_temperature: 0.7
+
+  openai_medium:
+    provider: "openai"
+    model: "gpt-4o-mini"
+    tier: "medium"
+    api_key_env: "OPENAI_API_KEY"
+    max_tokens: 8192
+    context_window: 128000
+    requests_per_minute: 500
+    default_temperature: 0.7
+
+# Agent Assignments
+agents:
+  world:
+    type: "world"
+    llm_backend: "openai_medium"
+    system_prompt: "world/system.jinja2"
+
+  plot:
+    type: "plot"
+    llm_backend: "openai_medium"
+    system_prompt: "plot/system.jinja2"
+
+  writing:
+    type: "writing"
+    llm_backend: "openai_medium"
+    system_prompt: "writing/system.jinja2"
+
+  characters:
+    - name: "Kael"
+      llm_backend: "openai_cheap"
+      system_prompt: "character/system.jinja2"
+      character_sheet: "characters/kael.yaml"
+      memory_type: "vector"
+
+    - name: "Sera"
+      llm_backend: "openai_cheap"
+      system_prompt: "character/system.jinja2"
+      character_sheet: "characters/sera.yaml"
+      memory_type: "vector"
+
+    - name: "Theron"
+      llm_backend: "openai_cheap"
+      system_prompt: "character/system.jinja2"
+      character_sheet: "characters/theron.yaml"
+      memory_type: "vector"
+
+    - name: "Mira"
+      llm_backend: "openai_cheap"
+      system_prompt: "character/system.jinja2"
+      character_sheet: "characters/mira.yaml"
+      memory_type: "vector"
+
+    - name: "Voss"
+      llm_backend: "openai_cheap"
+      system_prompt: "character/system.jinja2"
+      character_sheet: "characters/voss.yaml"
+      memory_type: "vector"
+
+# Pipeline settings
+pipeline:
+  max_revision_rounds: 3
+  scene_composition_timeout: 180
+  character_reaction_timeout: 60
+  parallel_character_reactions: true
+
+# Output settings
+output:
+  directory: "output/"
+  formats:
+    - "markdown"
+  versioning: true
+  save_intermediates: true
+
+# World bible file
+world:
+  file: "world.yaml"
+
+# Plot outline
+plot:
+  file: "plot_outline.yaml"

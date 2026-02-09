@@ -1,0 +1,101 @@
+# Character Sheet — Kael (Enhanced Format)
+name: "Kael"
+age: 19
+character_type: "protagonist"
+
+appearance: "Lean and sinewy from years at the forge. Dark hair, calloused hands, a burn scar on his left forearm. Brown eyes that glow faintly amber when he touches the shard."
+
+personality_traits:
+  - "Stubborn — once he decides something, he doesn't back down"
+  - "Quietly compassionate — acts of kindness rather than words"
+  - "Self-doubting — doesn't believe he's worthy of the quest"
+  - "Practical — prefers simple solutions to grand plans"
+
+backstory: >
+  Raised by his uncle in a Hearthlands village after his parents died in a
+  Void-touched attack when he was five. Apprenticed as a blacksmith. Never
+  knew his bloodline connects him to King Aethel. Has recurring dreams of
+  fire and a shattered crown.
+
+motivations:
+  - "Protect the people he cares about"
+  - "Understand why the shard chose him"
+  - "Prove he's more than a village blacksmith"
+
+speech_patterns: >
+  Direct and blunt. Uses short sentences. Avoids flowery language. Occasional
+  dry humor. When stressed, falls silent rather than talking. Uses smithing
+  metaphors ("forged in fire", "tempered", "slag").
+
+# Enhanced skills format with scene triggers
+skills:
+  - name: "Blacksmithing"
+    description: "Expert metalworker, can identify and work any metal. Understands the properties of different alloys."
+    proficiency_level: 8
+    scene_triggers: ["combat", "exploration", "investigation"]
+
+  - name: "Aethercraft (Uncontrolled)"
+    description: "Raw magical ability channeled through the shard. Powerful but unpredictable, especially under stress."
+    proficiency_level: 3
+    scene_triggers: ["magic", "combat"]
+
+  - name: "Physical Endurance"
+    description: "Years of forge work built exceptional stamina and heat tolerance."
+    proficiency_level: 7
+    scene_triggers: ["combat", "survival", "exploration"]
+
+  - name: "Stubborn Determination"
+    description: "Refuses to give up even when outmatched. Mental fortitude against despair."
+    proficiency_level: 9
+    scene_triggers: ["emotional", "combat", "negotiation"]
+
+# Enhanced relationships format
+relationships:
+  - target_character: "Sera"
+    relationship_type: "romantic"
+    trust_level: 8
+    history:
+      - "Childhood friends since age 7"
+      - "She defended him from village bullies"
+      - "Together discovered the first shard"
+    current_tension: "Unspoken feelings, fear of ruining friendship"
+
+  - target_character: "Theron"
+    relationship_type: "rival"
+    trust_level: -2
+    history:
+      - "Met during the Cult attack on the village"
+      - "Theron's smooth talking grates on Kael's directness"
+    current_tension: "Doesn't trust him with the group's safety or secrets"
+
+  - target_character: "Mira"
+    relationship_type: "mentor-student"
+    trust_level: 5
+    history:
+      - "She explained the nature of the shards"
+      - "Taught him basic control of his powers"
+    current_tension: "Questions the Order's passive approach to the Cult"
+
+  - target_character: "Voss"
+    relationship_type: "wary"
+    trust_level: 0
+    history:
+      - "Former Cult member seeking redemption"
+      - "Kael sees his own potential darkness reflected"
+    current_tension: "Fears what he might become if corrupted by the shard"
+
+# Enhanced emotional state
+emotional_state:
+  current_state: "anxious"
+  intensity: 6
+  trigger_event: "Learning about his connection to King Aethel's bloodline"
+  previous_states:
+    - "neutral"
+    - "shocked"
+    - "determined"
+
+arc_summary: >
+  Kael begins as a reluctant hero who doesn't believe he deserves the shard's
+  power. Through the journey, he learns that worthiness isn't about bloodline
+  or power — it's about the choices you make. He ultimately chooses sacrifice
+  over power, finding a third path that none expected.

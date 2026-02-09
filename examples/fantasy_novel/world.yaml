@@ -1,0 +1,86 @@
+# World Bible — The Shattered Crown
+
+setting:
+  name: "Aethermoor"
+  description: >
+    A continent fractured by the Sundering — an ancient cataclysm that shattered
+    the divine Crown of Aethel, scattering its five shards across the land.
+    The world is slowly dying as the Aetherveil — the magical barrier that
+    separates the mortal realm from the Void — weakens with each passing year.
+
+geography:
+  regions:
+    - name: "The Hearthlands"
+      description: "Rolling plains and farming villages. The political heart of the old kingdom. Now ruled by competing noble houses."
+      climate: "Temperate, four seasons"
+      notable_locations:
+        - "Thornwall — the old capital, a walled city built on a hill"
+        - "The Ashfield — a blighted area where the first shard landed"
+
+    - name: "The Driftwood Coast"
+      description: "Rocky coastline dotted with fishing villages and smuggler coves. Home to the Free Ports."
+      climate: "Maritime, foggy"
+      notable_locations:
+        - "Port Vellen — the largest free port, a hub of trade and information"
+        - "The Drowned Spire — ruins of an ancient lighthouse, rumored to hold a shard"
+
+    - name: "The Thornwood"
+      description: "Ancient forest where trees grow as tall as castles. Home to the Verdant Order."
+      climate: "Cool, perpetually misty"
+      notable_locations:
+        - "The Heartroot — a massive tree at the forest's center, a sacred place"
+        - "Gloomhaven — a settlement of outcasts and refugees at the forest's edge"
+
+    - name: "The Spirelands"
+      description: "Mountain range with peaks that pierce the clouds. Rich in minerals and ancient ruins."
+      climate: "Alpine, harsh winters"
+      notable_locations:
+        - "Skyreach Citadel — fortress of the Wardens of the Peak"
+        - "The Crystalline Caves — mines where aether-crystals are harvested"
+
+magic_system:
+  name: "Aethercraft"
+  description: >
+    Magic drawn from the Aetherveil — the membrane between the mortal world and
+    the Void. Practitioners (Aethersmiths) channel aether through focus objects
+    (crystals, runes, or the Crown shards themselves).
+  rules:
+    - "Aether use drains the Veil, hastening its collapse"
+    - "Greater magic requires greater cost — physical pain, memory loss, or life force"
+    - "The five Crown shards amplify aether enormously but corrupt the wielder over time"
+    - "Void-touched creatures emerge where the Veil is thinnest"
+    - "Natural aether regenerates slowly; forced extraction causes Blight"
+  disciplines:
+    - "Warding — defensive barriers and protections"
+    - "Shaping — manipulating physical matter"
+    - "Whispering — telepathy and emotional manipulation"
+    - "Voidwalking — dangerous art of touching the Void directly"
+
+history:
+  the_sundering: >
+    Three hundred years ago, King Aethel attempted to use the Crown to seal
+    the Void permanently. The ritual failed catastrophically, shattering the
+    Crown into five shards and devastating the continent. The blast created the
+    Ashfield and weakened the Veil everywhere.
+  current_era: >
+    The kingdom is fractured. Noble houses fight for dominance. The Verdant Order
+    guards the Thornwood and its secrets. The Wardens of the Peak defend against
+    Void incursions in the mountains. Rumors spread that someone is collecting
+    the shards.
+
+factions:
+  - name: "The Verdant Order"
+    description: "Druidic guardians of the Thornwood. They believe nature will heal the Veil if humanity stops exploiting aether."
+    leader: "Elder Mossweaver"
+
+  - name: "The Wardens of the Peak"
+    description: "Military order that guards the mountain passes against Void-touched creatures."
+    leader: "Commander Drayce"
+
+  - name: "The Shardseeker Cult"
+    description: "Secret society that believes reuniting the Crown shards will grant godlike power."
+    leader: "Unknown — called 'The Faceless'"
+
+  - name: "The Free Ports Alliance"
+    description: "Loose coalition of coastal traders and pirates. Neutral in politics, interested in profit."
+    leader: "Harbormaster Lenne"

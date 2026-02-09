@@ -1,0 +1,46 @@
+# Character Sheet — Sera
+name: "Sera"
+age: 20
+appearance: "Athletic build, auburn hair usually tied back. Sharp green eyes, freckles across her nose. Carries a hand-carved bow from her father."
+
+personality_traits:
+  - "Fiercely independent — refuses to be protected"
+  - "Quick-witted and sharp-tongued"
+  - "Deeply loyal once trust is earned"
+  - "Restless — hates staying in one place too long"
+
+backstory: >
+  A hunter and tracker from Kael's village. Her father was a traveling
+  merchant who taught her to read, fight, and navigate. She's always felt
+  the village was too small for her. When the Cult attacks, she doesn't
+  hesitate to leave — she's been waiting for a reason.
+
+motivations:
+  - "See the world beyond the Hearthlands"
+  - "Protect Kael from himself"
+  - "Find her missing father, who disappeared on a trade route a year ago"
+
+speech_patterns: >
+  Quick and witty. Uses rhetorical questions and sarcasm. When serious,
+  becomes very precise with her words. Occasionally quotes her father's
+  proverbs. Comfortable with silence around people she trusts.
+
+relationships:
+  Kael: "Her oldest friend. She's frustrated by his self-doubt because she sees his potential clearly."
+  Theron: "Attracted to his charm but doesn't trust him. They spar verbally."
+  Mira: "Admires her knowledge but finds the Verdant Order's neutrality cowardly."
+  Voss: "Sympathetic — sees him as someone trying to escape their past, like her."
+
+emotional_state: "Eager, with underlying worry"
+
+arc_summary: >
+  Sera begins seeking adventure and escape. She discovers that the world
+  beyond the village is darker than she imagined. Her journey is about
+  learning that true freedom isn't running from responsibility — it's
+  choosing what to fight for.
+
+skills:
+  - "Expert archer and tracker"
+  - "Navigation and wilderness survival"
+  - "Persuasion and bartering"
+  - "Literate — reads ancient trade scripts"

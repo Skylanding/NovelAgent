@@ -1,0 +1,93 @@
+# Plot Outline — 逆天炼魂 (Against Heaven: Soul Refining)
+
+premise: >
+  林焱 (Lin Yan), once a cultivation genius, had his dantian shattered and soul
+  damaged by a mysterious enemy at age 14, falling from prodigy to trash in the
+  eyes of his clan. Three years later, a dying elder alchemist's soul merges with
+  an ancient ring he carries, awakening the spirit of 药尘 (Yao Chen), a legendary
+  Tier 6 alchemist who was betrayed and destroyed by the Soul Hall centuries ago.
+  With Yao Chen's guidance and the discovery that his shattered dantian holds a
+  fragment of a Heavenly Flame, Lin Yan begins a meteoric rise — mastering alchemy,
+  reclaiming his honor, and uncovering a conspiracy that threatens the entire continent.
+
+themes:
+  - "逆天改命 — Defying fate through willpower and perseverance"
+  - "师徒情 — The bond between master and disciple transcends death"
+  - "强者为尊 — Only the strong survive, but what does true strength mean?"
+  - "守护与复仇 — The line between protecting loved ones and seeking vengeance"
+  - "天道酬勤 — Heaven rewards the diligent, not the talented"
+
+target_chapter_count: 30
+
+acts:
+  - name: "第一卷 — 废材崛起 (Volume 1: Rise of the Trash)"
+    chapters: [1, 2, 3, 4, 5, 6, 7, 8]
+    arc_goal: >
+      Lin Yan, mocked as trash for three years, discovers the ancient ring's secret
+      and begins training under Yao Chen. He re-cultivates using a unique method that
+      turns his shattered dantian into an advantage, masters basic alchemy, and
+      shocks everyone at the clan's annual tournament. He meets and clashes with
+      Xiao Bingning, the cold genius of the Xiao clan.
+    key_events:
+      - "Lin Yan is publicly humiliated at a clan gathering"
+      - "The ancient ring activates, Yao Chen's spirit awakens"
+      - "Yao Chen reveals Lin Yan's shattered dantian contains a dormant Heavenly Flame"
+      - "Secret training begins — a unique cultivation method using the flame"
+      - "Lin Yan creates his first pill, stunning an elder"
+      - "Annual clan tournament — Lin Yan defeats his former bully"
+      - "Xiao Bingning arrives to break their engagement, Lin Yan refuses to be humiliated"
+      - "Lin Yan enters the Heavenly Flame Academy"
+
+  - name: "第二卷 — 天炎学院 (Volume 2: Heavenly Flame Academy)"
+    chapters: [9, 10, 11, 12, 13, 14, 15, 16]
+    arc_goal: >
+      At the academy, Lin Yan faces powerful rivals, uncovers alchemy secrets,
+      and begins to awaken the dormant Heavenly Flame. The Soul Hall's shadow
+      reaches the academy. Han Feng, a senior disciple with hidden allegiance
+      to the Soul Hall, becomes his nemesis. Yun Lan, a fellow student, becomes
+      an unlikely ally.
+    key_events:
+      - "Academy entrance trials — Lin Yan barely passes with creative use of alchemy"
+      - "Rivalry with academy geniuses, especially 韩枫 (Han Feng)"
+      - "Discovers the academy holds a fragment of the Dou Di's manual"
+      - "First awakening of the Heavenly Flame during a crisis"
+      - "Alchemy competition — Lin Yan produces a pill with patterns, shocking everyone"
+      - "Soul Hall agents infiltrate the academy"
+      - "Yun Lan helps Lin Yan escape an ambush, reluctant alliance forms"
+      - "Han Feng's true allegiance is hinted at"
+
+  - name: "第三卷 — 天火觉醒 (Volume 3: Heavenly Flame Awakening)"
+    chapters: [17, 18, 19, 20, 21, 22, 23]
+    arc_goal: >
+      Lin Yan ventures into the Desolate Wilderness to fully awaken his Heavenly
+      Flame. He faces deadly beasts, discovers ancient ruins, and learns the truth
+      about who destroyed his dantian. Xiao Bingning, sent by her clan to the same
+      ruins, is forced to cooperate with him. Their relationship shifts.
+    key_events:
+      - "Expedition to the Desolate Wilderness announced"
+      - "Encounter with a Beast King — Lin Yan forms a blood contract"
+      - "Discovery of the Ancient Battlefield and Dou Di ruins"
+      - "Heavenly Flame fully awakens — devastating but nearly kills him"
+      - "Xiao Bingning saves Lin Yan, begins to see his true worth"
+      - "The truth: the Soul Hall orchestrated his dantian destruction to harvest the flame"
+      - "Han Feng betrays the expedition, steals a relic for the Soul Hall"
+
+  - name: "第四卷 — 逆天之战 (Volume 4: Battle Against Heaven)"
+    chapters: [24, 25, 26, 27, 28, 29, 30]
+    arc_goal: >
+      The Soul Hall launches an open assault. Lin Yan must unite the academy,
+      the Pill Tower, and reluctant allies to defend against the onslaught. Yao Chen
+      reveals the final secret — to truly master the Heavenly Flame, Lin Yan must
+      refine his own soul. In the climactic battle, Lin Yan achieves a breakthrough
+      that defies the heavens, defeats Han Feng, and forces the Soul Hall to retreat.
+      But the Nether Abyss seal cracks — the true enemy is yet to come.
+    key_events:
+      - "Soul Hall declares war on the academy"
+      - "Lin Yan rallies allies — academy, Pill Tower, even the Xiao clan"
+      - "Yao Chen's ultimate technique: Soul Refining — using Heavenly Flame on one's own soul"
+      - "Lin Yan masters Soul Refining, reaching 斗王 (Dou Wang)"
+      - "Final battle: Lin Yan vs Han Feng, who wields a stolen Heavenly Flame"
+      - "Xiao Bingning fights alongside Lin Yan, breaking her clan's orders"
+      - "Yao Chen sacrifices the last of his soul energy to save Lin Yan"
+      - "Victory, but the Nether Abyss seal cracks — sequel hook"
+      - "Epilogue: Lin Yan vows to revive Yao Chen and face the coming darkness"

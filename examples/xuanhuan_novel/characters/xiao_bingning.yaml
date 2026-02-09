@@ -1,0 +1,95 @@
+# Character Sheet — 萧冰凝 (Xiao Bingning) — Enhanced Format
+name: "萧冰凝"
+age: 17
+character_type: "supporting"
+
+appearance: >
+  Strikingly beautiful with an ethereal coldness — porcelain skin, silver-white
+  hair (a bloodline trait of the Xiao clan's ice lineage), and pale blue eyes that
+  seem to see through pretense. Carries herself with the rigid grace of noble
+  upbringing. Wears the white and blue robes of the Xiao clan's inner court.
+
+personality_traits:
+  - "外冷内热 — Cold exterior hiding a deeply feeling heart"
+  - "骄傲 — Proud to a fault, her pride masks insecurity"
+  - "重责任 — Duty-bound to her clan above personal feelings"
+  - "聪慧倔强 — Intelligent and stubborn, hates being underestimated as a pretty face"
+
+backstory: >
+  Eldest daughter of the Xiao clan's main branch and the clan's greatest young genius.
+  Cultivates the rare 寒冰诀 (Frost Ice Art), a bloodline technique. Engaged to Lin Yan
+  since childhood by clan elders. When Lin Yan fell, the clan pressured her to break the
+  engagement publicly. She did it not out of cruelty but duty — yet the act haunts her.
+  She's been sent to prove the Xiao clan's worth through achievements, carrying the
+  weight of her family's expectations.
+
+motivations:
+  - "证明自己 — Prove her worth beyond her beauty and bloodline"
+  - "守护家族 — Protect her declining clan from political enemies"
+  - "寻找真相 — Growing suspicion about who orchestrated Lin Yan's fall"
+  - "赎罪 — Secret guilt over humiliating Lin Yan"
+
+speech_patterns: >
+  Formal and precise, using classical phrasing. Speaks rarely in public — when she
+  does, people listen. In private moments, her speech softens and becomes more natural.
+  When angry, her voice drops to a dangerous whisper rather than rising. Occasionally
+  lets slip phrases from her grandmother's folk wisdom that contrast her noble demeanor.
+
+skills:
+  - name: "寒冰诀 (Frost Ice Art)"
+    description: "Bloodline cultivation technique. Creates devastating ice attacks and defensive barriers. Higher tiers can freeze spiritual energy itself."
+    proficiency_level: 7
+    scene_triggers: ["combat", "magic"]
+
+  - name: "家族政治 (Clan Politics)"
+    description: "Raised in court intrigues. Reads political situations instinctively."
+    proficiency_level: 6
+    scene_triggers: ["negotiation", "social"]
+
+  - name: "战术分析 (Tactical Analysis)"
+    description: "Exceptional at reading battlefields and enemy formations. Cool head under pressure."
+    proficiency_level: 7
+    scene_triggers: ["combat", "investigation"]
+
+relationships:
+  - target_character: "林焱"
+    relationship_type: "complex-romantic"
+    trust_level: 1
+    history:
+      - "Childhood engagement she barely remembers"
+      - "Forced to publicly break the engagement"
+      - "Shocked by his resurgence, questioning everything she was told about him"
+    current_tension: "Guilt, growing respect, and confusion about her own feelings"
+
+  - target_character: "韩枫"
+    relationship_type: "wary"
+    trust_level: -2
+    history:
+      - "Han Feng courted her clan's favor"
+      - "Something about him feels wrong — too smooth, too eager"
+    current_tension: "Instinctive distrust she can't fully explain"
+
+  - target_character: "云岚"
+    relationship_type: "rival-respect"
+    trust_level: 3
+    history:
+      - "Fellow female cultivator of similar talent"
+      - "Competitive but with mutual respect"
+    current_tension: "Notices Yun Lan's closeness to Lin Yan, complex feelings"
+
+emotional_state:
+  current_state: "conflicted"
+  intensity: 6
+  trigger_event: "Witnessing Lin Yan's unexpected strength at the tournament"
+  previous_states:
+    - "dutiful"
+    - "guilty"
+    - "curious"
+
+arc_summary: >
+  Xiao Bingning begins as an apparent antagonist — the cold beauty who broke the
+  hero's engagement. Her arc reveals the pressures behind her actions and her own
+  struggle for identity beyond clan expectations. Through witnessing Lin Yan's rise
+  and fighting alongside him, she learns that duty and heart need not conflict. She
+  ultimately defies her clan to stand with Lin Yan, proving that her strength comes
+  from her own choices, not her bloodline.

@@ -1,0 +1,114 @@
+# Character Sheet — 林焱 (Lin Yan) — Enhanced Format
+name: "林焱"
+age: 17
+character_type: "protagonist"
+
+appearance: >
+  Lean and sharp-featured with intense dark eyes that sometimes flash with golden
+  flame when his emotions surge. Once had the healthy glow of a cultivator, now
+  somewhat pale and thin from three years of decline. Black hair tied in a simple
+  ponytail. Wears a worn jade ring on his left hand — the ancient ring containing
+  Yao Chen's spirit. A faint scar runs across his chest where his dantian was shattered.
+
+personality_traits:
+  - "坚韧不屈 — Unyielding stubbornness, refuses to accept fate"
+  - "隐忍 — Endures humiliation silently, waiting for the right moment"
+  - "重情重义 — Values bonds deeply, never forgets kindness or grudges"
+  - "聪慧 — Quick-witted and adaptive, turns disadvantages into advantages"
+
+backstory: >
+  Born into a minor branch of the Lin clan in Lanfeng Empire. Showed extraordinary
+  cultivation talent as a child, reaching 斗师 (Dou Shi) at age 14 — unprecedented
+  for his age. During a clan expedition, a mysterious figure shattered his dantian
+  and damaged his soul, leaving him unable to cultivate. For three years he endured
+  mockery and contempt, falling from genius to "trash." His engagement to Xiao
+  Bingning of the Xiao clan became a joke. He carries his dead mother's jade ring,
+  not knowing it holds a legendary alchemist's spirit.
+
+motivations:
+  - "恢复修为 — Reclaim his cultivation and surpass his former peak"
+  - "查明真相 — Discover who destroyed his dantian and why"
+  - "守护所爱 — Protect those who stood by him in his darkest days"
+  - "报师恩 — Repay Yao Chen by finding a way to restore his soul"
+
+speech_patterns: >
+  Speaks with quiet confidence that unnerves those who expect a broken person.
+  Uses few words in normal conversation but becomes eloquent when challenged.
+  In moments of defiance, his voice carries a cold edge: "三十年河东，三十年河西，
+  莫欺少年穷" (Don't bully the young and poor — fortunes change). When speaking
+  with Yao Chen, shows respect but also dry humor. Never boasts — lets actions speak.
+
+skills:
+  - name: "天焰炼体 (Heavenly Flame Body Tempering)"
+    description: "Unique cultivation method using the dormant Heavenly Flame in his shattered dantian. Turns his weakness into unorthodox strength."
+    proficiency_level: 4
+    scene_triggers: ["combat", "magic", "survival"]
+
+  - name: "炼药术 (Alchemy)"
+    description: "Taught by Yao Chen. Progressing rapidly from Tier 1 toward Tier 2. Flame control gives him an edge other alchemists lack."
+    proficiency_level: 5
+    scene_triggers: ["investigation", "social", "magic"]
+
+  - name: "灵魂感知 (Soul Perception)"
+    description: "His damaged-then-rebuilt soul has unusual sensitivity. Can detect hidden presences and see through illusions."
+    proficiency_level: 3
+    scene_triggers: ["investigation", "combat", "exploration"]
+
+  - name: "隐忍心法 (Art of Endurance)"
+    description: "Three years of suffering forged an unbreakable mental fortitude. Resistant to soul attacks and psychological manipulation."
+    proficiency_level: 8
+    scene_triggers: ["emotional", "combat", "negotiation"]
+
+relationships:
+  - target_character: "药尘"
+    relationship_type: "master-disciple"
+    trust_level: 9
+    history:
+      - "Yao Chen's spirit awakened in his ring during his darkest moment"
+      - "Yao Chen gave him hope and a path forward when he had nothing"
+      - "Training together forged a bond deeper than blood"
+    current_tension: "Worries about the cost Yao Chen pays to teach him — the old spirit fades with each lesson"
+
+  - target_character: "萧冰凝"
+    relationship_type: "complex-romantic"
+    trust_level: -3
+    history:
+      - "Childhood engagement arranged by their clans"
+      - "She came to break the engagement publicly, humiliating him"
+      - "Despite his anger, he recognizes she was also trapped by clan politics"
+    current_tension: "Resentment mixed with reluctant respect as he sees her true character"
+
+  - target_character: "韩枫"
+    relationship_type: "rival-enemy"
+    trust_level: -8
+    history:
+      - "Academy senior who mocks him openly"
+      - "Suspects Han Feng's connection to the force that destroyed his dantian"
+    current_tension: "Growing certainty that Han Feng works for the Soul Hall"
+
+  - target_character: "云岚"
+    relationship_type: "ally"
+    trust_level: 4
+    history:
+      - "Fellow academy student who didn't judge him by reputation"
+      - "Helped him during the entrance trials"
+    current_tension: "Grateful but wary — not sure why she helps him"
+
+emotional_state:
+  current_state: "determined"
+  intensity: 8
+  trigger_event: "Yao Chen's awakening gave him a second chance"
+  previous_states:
+    - "despairing"
+    - "numb"
+    - "hopeful"
+    - "resolute"
+
+arc_summary: >
+  Lin Yan's journey is the classic 逆天改命 (defying fate) arc. From a broken genius
+  mocked as trash, he rises through alchemy and an unconventional cultivation path
+  to surpass those who looked down on him. His core growth is learning that true
+  strength isn't about power alone — it's about the bonds you forge and the sacrifices
+  you're willing to make. His relationship with Yao Chen teaches him that receiving
+  kindness creates a debt of the heart, and his greatest battle is choosing to protect
+  others over pursuing personal vengeance.
