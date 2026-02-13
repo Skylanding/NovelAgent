@@ -138,6 +138,57 @@ class ProjectMeta(BaseModel):
     target_chapters: int = 12
 
 
+class VisualBackendConfig(BaseModel):
+    """Configuration for a visual generation backend."""
+
+    provider: str  # "openai_image" or "openai_video"
+    model: str  # "dall-e-3" or "sora-2"
+    api_key_env: Optional[str] = None
+    api_key: Optional[str] = None
+    base_url: Optional[str] = None
+    requests_per_minute: int = 10
+    default_size: str = "1024x1024"
+    default_quality: str = "standard"
+    default_style: str = "natural"
+
+    @model_validator(mode="after")
+    def resolve_api_key(self) -> "VisualBackendConfig":
+        if self.api_key is None and self.api_key_env:
+            self.api_key = os.environ.get(self.api_key_env)
+        return self
+
+
+class VisualAgentsConfig(BaseModel):
+    """Configuration for visual pipeline agents."""
+
+    extract: dict[str, Any] = Field(
+        default_factory=lambda: {"llm_backend": "openai_medium"}
+    )
+    expansion: dict[str, Any] = Field(
+        default_factory=lambda: {"llm_backend": "openai_medium"}
+    )
+    visual: dict[str, Any] = Field(
+        default_factory=lambda: {
+            "llm_backend": "openai_medium",
+            "image_backend": "dalle3",
+            "video_backend": "sora2",
+        }
+    )
+
+
+class VisualPipelineConfig(BaseModel):
+    """Visual pipeline execution settings."""
+
+    generate_images: bool = True
+    generate_videos: bool = True
+    video_duration: int = 8
+    parallel_scenes: bool = True
+    video_poll_interval: float = 10.0
+    video_timeout: float = 600.0
+    default_image_size: str = "1024x1024"
+    default_video_size: str = "1280x720"
+
+
 class ProjectConfig(BaseModel):
     """Root configuration model for a StoryForge project."""
 
@@ -148,6 +199,12 @@ class ProjectConfig(BaseModel):
     output: OutputConfig = Field(default_factory=OutputConfig)
     world: dict[str, Any] = Field(default_factory=dict)
     plot: dict[str, Any] = Field(default_factory=dict)
+    # Visual pipeline (all optional for backward compatibility)
+    visual_backends: dict[str, VisualBackendConfig] = Field(default_factory=dict)
+    visual_agents: Optional[VisualAgentsConfig] = None
+    visual_pipeline: VisualPipelineConfig = Field(
+        default_factory=VisualPipelineConfig
+    )
 
 
 def load_config(project_dir: Path) -> ProjectConfig:

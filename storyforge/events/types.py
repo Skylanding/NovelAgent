@@ -61,6 +61,14 @@ class EventType(str, Enum):
     QUALITY_CHECK_REQUEST = "quality_check_request"
     QUALITY_CHECK_RESULT = "quality_check_result"
 
+    # Visual pipeline events
+    VISUAL_EXTRACT_REQUEST = "visual_extract_request"
+    VISUAL_EXTRACT_RESULT = "visual_extract_result"
+    VISUAL_EXPAND_REQUEST = "visual_expand_request"
+    VISUAL_EXPAND_RESULT = "visual_expand_result"
+    VISUAL_GENERATE_REQUEST = "visual_generate_request"
+    VISUAL_GENERATE_RESULT = "visual_generate_result"
+
 
 @dataclass
 class Event:

@@ -32,6 +32,11 @@ def _inject_api_keys(config, api_keys: dict[str, str]) -> None:
         key = api_keys.get(backend_cfg.provider)
         if key:
             backend_cfg.api_key = key
+    # Also inject into visual backends
+    for _name, vb_cfg in config.visual_backends.items():
+        key = api_keys.get(vb_cfg.provider)
+        if key:
+            vb_cfg.api_key = key
 
 
 def _resolve_api_keys_for_config(config, cli_api_key: str | None) -> None:
@@ -51,6 +56,13 @@ def _resolve_api_keys_for_config(config, cli_api_key: str | None) -> None:
             continue  # local models don't need API keys
         providers_needing_key.setdefault(
             backend_cfg.provider, backend_cfg.api_key_env or ""
+        )
+    # Also check visual backends
+    for _name, vb_cfg in config.visual_backends.items():
+        if vb_cfg.api_key:
+            continue
+        providers_needing_key.setdefault(
+            vb_cfg.provider, vb_cfg.api_key_env or ""
         )
 
     if not providers_needing_key:
@@ -335,6 +347,282 @@ def init(template: str, output_dir: str):
         )
 
 
+@main.command()
+@click.argument("project_dir", type=click.Path(exists=True))
+@click.option("-t", "--text", "text_input", type=str, default="", help="Input text to visualize")
+@click.option("--text-file", type=click.Path(exists=True), help="Read input text from file")
+@click.option("-i", "--image", "image_paths", multiple=True, type=click.Path(exists=True), help="Input image(s)")
+@click.option("--image-url", "image_urls", multiple=True, type=str, help="Input image URL(s)")
+@click.option("--no-image", is_flag=True, help="Skip image generation")
+@click.option("--no-video", is_flag=True, help="Skip video generation")
+@click.option("--video-duration", type=click.Choice(["4", "8", "12"]), default="8", help="Sora video duration in seconds")
+@click.option("--image-size", type=str, default=None, help="Image size (e.g. 1024x1024)")
+@click.option("--video-size", type=str, default=None, help="Video size (e.g. 1280x720)")
+@click.option("--api-key", "-k", type=str, default=None, help="OpenAI API key")
+@click.option("--verbose", "-v", is_flag=True, help="Verbose logging")
+def visualize(
+    project_dir: str,
+    text_input: str,
+    text_file: Optional[str],
+    image_paths: tuple[str, ...],
+    image_urls: tuple[str, ...],
+    no_image: bool,
+    no_video: bool,
+    video_duration: str,
+    image_size: Optional[str],
+    video_size: Optional[str],
+    api_key: Optional[str],
+    verbose: bool,
+):
+    """Generate images and videos from text/image input using the visual pipeline."""
+    setup_logging(verbose)
+    project_path = Path(project_dir)
+
+    # Resolve text input
+    text = text_input
+    if text_file:
+        text = Path(text_file).read_text(encoding="utf-8")
+    if not text and not image_paths and not image_urls:
+        console.print("[red]Error:[/red] Provide --text, --text-file, --image, or --image-url")
+        return
+
+    async def _visualize():
+        from storyforge.config import load_config
+
+        config = load_config(project_path)
+        _resolve_api_keys_for_config(config, api_key)
+
+        console.print(
+            f"[bold]StoryForge Visual[/bold] — "
+            f"[cyan]{config.project.name}[/cyan]"
+        )
+
+        # Apply CLI overrides before building runtime
+        if no_image:
+            config.visual_pipeline.generate_images = False
+        if no_video:
+            config.visual_pipeline.generate_videos = False
+
+        runtime = await _build_visual_runtime(project_path, config)
+        pipeline = runtime["pipeline"]
+
+        console.print("\n[bold yellow]>>> Stage 1: Extract[/bold yellow]")
+        console.print(f"  Text length: {len(text)} chars")
+        if image_paths:
+            console.print(f"  Images: {len(image_paths)} file(s)")
+        if image_urls:
+            console.print(f"  Image URLs: {len(image_urls)}")
+
+        manifest = await pipeline.run(
+            text=text,
+            image_paths=list(image_paths),
+            image_urls=list(image_urls),
+            image_size=image_size,
+            video_size=video_size,
+            video_duration=int(video_duration),
+        )
+
+        # Report results
+        results = manifest.get("visual_results", [])
+        console.print(f"\n[bold green]Done![/bold green] Generated {len(results)} scene(s)")
+        for r in results:
+            idx = r.get("scene_index", "?")
+            if r.get("image", {}).get("path"):
+                console.print(f"  [green]✓[/green] Scene {idx} image: {r['image']['path']}")
+            if r.get("video", {}).get("path"):
+                console.print(f"  [green]✓[/green] Scene {idx} video: {r['video']['path']}")
+            if r.get("error"):
+                console.print(f"  [red]✗[/red] Scene {idx}: {r['error']}")
+
+        output_dir = project_path / config.output.directory
+        console.print(f"\nOutput: {output_dir}")
+
+    _run_async(_visualize())
+
+
+async def _build_visual_runtime(project_path: Path, config) -> dict:
+    """Build the visual pipeline runtime from configuration."""
+    from storyforge.agents.base import AgentConfig
+    from storyforge.agents.expansion import ExpansionAgent
+    from storyforge.agents.extract import ExtractAgent
+    from storyforge.agents.visual_agent import VisualAgent
+    from storyforge.events.bus import EventBus
+    from storyforge.events.middleware import EventLogger
+    from storyforge.events.types import EventType
+    from storyforge.llm.factory import LLMFactory
+    from storyforge.memory.structured import StructuredMemory
+    from storyforge.pipeline.visual import VisualPipeline
+    from storyforge.visual.factory import VisualFactory
+    from storyforge.visual.output import VisualOutputManager
+
+    # Event bus
+    event_bus = EventBus()
+    event_bus.add_middleware(EventLogger())
+
+    # LLM backends
+    backends = {}
+    for name, backend_config in config.llm_backends.items():
+        backends[name] = LLMFactory.create_from_dict(backend_config.model_dump())
+
+    # Visual backends — auto-create defaults if not configured
+    if not config.visual_backends:
+        from storyforge.config import VisualBackendConfig
+
+        # Inherit the OpenAI API key from any configured LLM backend
+        openai_key = None
+        for _name, llm_cfg in config.llm_backends.items():
+            if llm_cfg.provider == "openai" and llm_cfg.api_key:
+                openai_key = llm_cfg.api_key
+                break
+
+        config.visual_backends = {
+            "dalle3": VisualBackendConfig(
+                provider="openai_image",
+                model="dall-e-3",
+                api_key=openai_key,
+                default_size="1024x1024",
+                default_quality="hd",
+            ),
+            "sora2": VisualBackendConfig(
+                provider="openai_video",
+                model="sora-2",
+                api_key=openai_key,
+                default_size="1280x720",
+            ),
+        }
+
+    visual_backends = {}
+    for name, vb_config in config.visual_backends.items():
+        visual_backends[name] = VisualFactory.create_from_dict(vb_config.model_dump())
+
+    # Visual agents config (use defaults if not configured)
+    va_config = config.visual_agents
+    if va_config is None:
+        from storyforge.config import VisualAgentsConfig
+        va_config = VisualAgentsConfig()
+
+    # Prompt templates: prefer project-level, fall back to package-level
+    prompt_dir = project_path / "prompts"
+    pkg_prompt_dir = Path(__file__).parent / "prompts"  # storyforge/prompts/
+    if not prompt_dir.exists():
+        prompt_dir = Path(__file__).parent.parent / "prompts"
+
+    def _resolve_prompt_dir(subdir: str) -> Path | None:
+        """Find a prompt subdirectory, checking project then package."""
+        if (prompt_dir / subdir).exists():
+            return prompt_dir / subdir
+        if (pkg_prompt_dir / subdir).exists():
+            return pkg_prompt_dir / subdir
+        return None
+
+    # Shared memory store for visual agents
+    data_dir = project_path / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    # ExtractAgent
+    extract_backend_name = va_config.extract.get("llm_backend", next(iter(backends)))
+    extract_backend = backends[extract_backend_name]
+    extract_memory = StructuredMemory(storage_path=data_dir / "extract_memory.json")
+    extract_prompt_dir = _resolve_prompt_dir("extract")
+    extract_agent = ExtractAgent(
+        config=AgentConfig(
+            name="extract",
+            role="extract",
+            llm_backend_id=extract_backend_name,
+            system_prompt_template="system.jinja2" if extract_prompt_dir else "",
+            max_context_tokens=extract_backend.config.max_tokens,
+            temperature=0.4,
+            subscriptions=[EventType.VISUAL_EXTRACT_REQUEST],
+        ),
+        llm=extract_backend,
+        memory=extract_memory,
+        event_bus=event_bus,
+        prompt_dir=extract_prompt_dir,
+    )
+    await extract_agent.initialize()
+
+    # ExpansionAgent
+    expand_backend_name = va_config.expansion.get("llm_backend", next(iter(backends)))
+    expand_backend = backends[expand_backend_name]
+    expand_memory = StructuredMemory(storage_path=data_dir / "expansion_memory.json")
+    expand_prompt_dir = _resolve_prompt_dir("expansion")
+    expansion_agent = ExpansionAgent(
+        config=AgentConfig(
+            name="expansion",
+            role="expansion",
+            llm_backend_id=expand_backend_name,
+            system_prompt_template="system.jinja2" if expand_prompt_dir else "",
+            max_context_tokens=expand_backend.config.max_tokens,
+            temperature=0.7,
+            subscriptions=[EventType.VISUAL_EXPAND_REQUEST],
+        ),
+        llm=expand_backend,
+        memory=expand_memory,
+        event_bus=event_bus,
+        prompt_dir=expand_prompt_dir,
+    )
+    await expansion_agent.initialize()
+
+    # VisualAgent
+    vis_cfg = va_config.visual
+    vis_backend_name = vis_cfg.get("llm_backend", next(iter(backends)))
+    vis_backend = backends[vis_backend_name]
+    vis_memory = StructuredMemory(storage_path=data_dir / "visual_memory.json")
+
+    image_backend = visual_backends.get(vis_cfg.get("image_backend", ""))
+    video_backend = visual_backends.get(vis_cfg.get("video_backend", ""))
+
+    vis_prompt_dir = _resolve_prompt_dir("visual")
+    visual_agent = VisualAgent(
+        config=AgentConfig(
+            name="visual",
+            role="visual",
+            llm_backend_id=vis_backend_name,
+            system_prompt_template="system.jinja2" if vis_prompt_dir else "",
+            max_context_tokens=vis_backend.config.max_tokens,
+            temperature=0.5,
+            subscriptions=[EventType.VISUAL_GENERATE_REQUEST],
+        ),
+        llm=vis_backend,
+        memory=vis_memory,
+        event_bus=event_bus,
+        image_backend=image_backend,
+        video_backend=video_backend,
+        prompt_dir=vis_prompt_dir,
+    )
+    await visual_agent.initialize()
+
+    # Output manager
+    output_dir = project_path / config.output.directory
+    output_mgr = VisualOutputManager(output_dir)
+    await output_mgr.initialize()
+
+    # Pipeline config
+    vp_config = config.visual_pipeline
+
+    pipeline = VisualPipeline(
+        extract_agent=extract_agent,
+        expansion_agent=expansion_agent,
+        visual_agent=visual_agent,
+        output_manager=output_mgr,
+        generate_images=vp_config.generate_images,
+        generate_videos=vp_config.generate_videos,
+        video_duration=vp_config.video_duration,
+        parallel_scenes=vp_config.parallel_scenes,
+        image_size=vp_config.default_image_size,
+        video_size=vp_config.default_video_size,
+    )
+
+    return {
+        "event_bus": event_bus,
+        "extract_agent": extract_agent,
+        "expansion_agent": expansion_agent,
+        "visual_agent": visual_agent,
+        "pipeline": pipeline,
+        "output_manager": output_mgr,
+    }
+
+
 def _sanitize_collection_name(name: str) -> str:
     """Sanitize a name for use as a ChromaDB collection name (ASCII only)."""
     import re
@@ -386,7 +674,10 @@ async def _build_runtime(project_path: Path, config) -> dict:
     )
     await output_mgr.initialize()
 
+    # Prompt templates: prefer project-level, fall back to package-level
     prompt_dir = project_path / "prompts"
+    if not prompt_dir.exists():
+        prompt_dir = Path(__file__).parent.parent / "prompts"
 
     # Language setting for all agents
     language = getattr(config.project, "language", "English")
@@ -406,11 +697,13 @@ async def _build_runtime(project_path: Path, config) -> dict:
             world_data = load_yaml_file(world_path)
             await world_memory.load_from_dict(world_data)
 
+    world_prompt_dir = prompt_dir / "world" if (prompt_dir / "world").exists() else None
     world_agent = WorldAgent(
         config=AgentConfig(
             name="world",
             role="world",
             llm_backend_id=world_cfg["llm_backend"],
+            system_prompt_template="system.jinja2" if world_prompt_dir else "",
             max_context_tokens=world_backend.config.max_tokens,
             temperature=0.6,
             prompt_variables=lang_vars,
@@ -424,7 +717,7 @@ async def _build_runtime(project_path: Path, config) -> dict:
         llm=world_backend,
         memory=world_memory,
         event_bus=event_bus,
-        prompt_dir=prompt_dir / "world" if (prompt_dir / "world").exists() else None,
+        prompt_dir=world_prompt_dir,
     )
     await world_agent.initialize()
 
@@ -442,11 +735,13 @@ async def _build_runtime(project_path: Path, config) -> dict:
             plot_data = load_yaml_file(plot_path)
             await plot_memory.store("plot_outline", plot_data)
 
+    plot_prompt_dir = prompt_dir / "plot" if (prompt_dir / "plot").exists() else None
     plot_agent = PlotAgent(
         config=AgentConfig(
             name="plot",
             role="plot",
             llm_backend_id=plot_cfg["llm_backend"],
+            system_prompt_template="system.jinja2" if plot_prompt_dir else "",
             max_context_tokens=plot_backend.config.max_tokens,
             temperature=0.7,
             prompt_variables=lang_vars,
@@ -459,7 +754,7 @@ async def _build_runtime(project_path: Path, config) -> dict:
         llm=plot_backend,
         memory=plot_memory,
         event_bus=event_bus,
-        prompt_dir=prompt_dir / "plot" if (prompt_dir / "plot").exists() else None,
+        prompt_dir=plot_prompt_dir,
     )
     await plot_agent.initialize()
 
@@ -470,11 +765,13 @@ async def _build_runtime(project_path: Path, config) -> dict:
         storage_path=project_path / "data" / "writing_memory.json"
     )
 
+    writing_prompt_dir = prompt_dir / "writing" if (prompt_dir / "writing").exists() else None
     writing_agent = WritingAgent(
         config=AgentConfig(
             name="writing",
             role="writing",
             llm_backend_id=writing_cfg["llm_backend"],
+            system_prompt_template="system.jinja2" if writing_prompt_dir else "",
             max_context_tokens=writing_backend.config.max_tokens,
             temperature=0.8,
             prompt_variables=lang_vars,
@@ -486,11 +783,12 @@ async def _build_runtime(project_path: Path, config) -> dict:
         llm=writing_backend,
         memory=writing_memory,
         event_bus=event_bus,
-        prompt_dir=prompt_dir / "writing" if (prompt_dir / "writing").exists() else None,
+        prompt_dir=writing_prompt_dir,
     )
     await writing_agent.initialize()
 
     # Create CharacterAgents
+    char_prompt_dir = prompt_dir / "character" if (prompt_dir / "character").exists() else None
     character_agents: dict[str, CharacterAgent] = {}
     for char_cfg in config.agents.characters:
         char_backend = backends[char_cfg.llm_backend]
@@ -522,6 +820,7 @@ async def _build_runtime(project_path: Path, config) -> dict:
                 name=char_cfg.name,
                 role="character",
                 llm_backend_id=char_cfg.llm_backend,
+                system_prompt_template="system.jinja2" if char_prompt_dir else "",
                 max_context_tokens=char_backend.config.max_tokens,
                 temperature=0.8,
                 prompt_variables=lang_vars,
@@ -534,7 +833,7 @@ async def _build_runtime(project_path: Path, config) -> dict:
             memory=char_memory,
             event_bus=event_bus,
             character_sheet=character_sheet,
-            prompt_dir=prompt_dir / "character" if (prompt_dir / "character").exists() else None,
+            prompt_dir=char_prompt_dir,
         )
         await char_agent.initialize()
         character_agents[char_cfg.name] = char_agent

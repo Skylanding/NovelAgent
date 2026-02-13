@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import logging
-from typing import AsyncIterator, Optional
+from typing import Any, AsyncIterator, Optional
 
 from openai import AsyncOpenAI
 
@@ -28,7 +28,7 @@ class OpenAIBackend(LLMBackend):
 
     async def generate(
         self,
-        messages: list[dict[str, str]],
+        messages: list[dict[str, Any]],
         temperature: Optional[float] = None,
         max_tokens: Optional[int] = None,
         stop_sequences: Optional[list[str]] = None,
@@ -60,7 +60,7 @@ class OpenAIBackend(LLMBackend):
 
     async def generate_stream(
         self,
-        messages: list[dict[str, str]],
+        messages: list[dict[str, Any]],
         temperature: Optional[float] = None,
         max_tokens: Optional[int] = None,
     ) -> AsyncIterator[str]:

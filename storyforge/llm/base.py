@@ -52,7 +52,7 @@ class LLMBackend(ABC):
     @abstractmethod
     async def generate(
         self,
-        messages: list[dict[str, str]],
+        messages: list[dict[str, Any]],
         temperature: Optional[float] = None,
         max_tokens: Optional[int] = None,
         stop_sequences: Optional[list[str]] = None,
@@ -63,7 +63,7 @@ class LLMBackend(ABC):
     @abstractmethod
     async def generate_stream(
         self,
-        messages: list[dict[str, str]],
+        messages: list[dict[str, Any]],
         temperature: Optional[float] = None,
         max_tokens: Optional[int] = None,
     ) -> AsyncIterator[str]:
